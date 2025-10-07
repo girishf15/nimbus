@@ -1,12 +1,35 @@
+# Core Flask and Web Framework
 Flask==2.3.3
 Jinja2==3.1.2
+Werkzeug==2.3.7
 python-multipart==0.0.6
-psycopg2-binary==2.9.11
+
+# Database
+psycopg2-binary==2.9.9
+
+# Authentication & Security
 passlib[bcrypt]==1.7.4
+bcrypt==3.2.2
+
+# Environment & Configuration
 python-dotenv==1.0.0
+
+# HTTP Requests
 requests==2.31.0
-PyMuPDF
-pdfplumber
-pytesseract
-pdf2image
-pillow
+
+# Document Processing - PDF Parsers
+PyMuPDF==1.23.26
+pdfplumber==0.10.3
+
+# Document Processing - OCR
+pytesseract==0.3.10
+pdf2image==3.1.0
+Pillow==10.1.0
+
+# Document Processing - Advanced Parser
+unstructured[pdf]==0.11.6
+
+# LangChain for Semantic Processing
+langchain-experimental==0.0.47
+langchain-community==0.0.13
+langchain-core==0.1.10
