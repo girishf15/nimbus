@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    border-radius: 0 0 1rem 1rem;
+}
+.navbar-brand img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Standardize Navbar Text and Button Styles */
+.navbar .navbar-brand {
+    font-size: 1.25rem; /* Larger font size for navbar brand title */
+    font-weight: 700; /* Make it bolder to match the importance */
+}
+.navbar .text-white-50 {
+    font-size: 0.9rem; /* Standard font size for "Logged in as" text */
+}
+.navbar .btn-outline-light {
+    font-size: 0.8rem; /* Standard font size for Logout button */
+    padding: 0.25rem 0.5rem; /* Consistent padding */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    min-height: 100vh;
+    background: #212529;
+    color: #fff;
+    border-radius: 0 0 1rem 1rem;
+}
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: font-size 0.2s, font-weight 0.2s;
+}
+.sidebar a.active, .sidebar a:hover {
+    background: #343a40;
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: none;
+}
+.card-header {
+    background: linear-gradient(90deg, #2c5364 0%, #0f2027 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* Button Styles */
+.btn-success, .btn-success:focus, .btn-success:active {
+    background-color: #198754 !important; /* Matches the green used in the progress bar */
+    border-color: #198754 !important;
+}
+
+.btn-success:hover {
+    background-color: #157347 !important; /* Slightly darker green for hover */
+    border-color: #146c43 !important;
+}
+
+/* Adjust Download Button Thickness */
+.btn-success {
+    padding: 0.25rem 0.5rem; /* Reduces padding for a slimmer appearance */
+    font-size: 0.8rem; /* Slightly smaller font size */
+}
+
+/* Align Progress Bar Vertically */
+.progress {
+    display: flex;
+    align-items: center; /* Center-aligns the progress bar vertically */
+    justify-content: center; /* Center-aligns the progress bar horizontally */
+    height: 22px; /* Ensures consistent height */
+}
+
+/* Align Table Content Consistently */
+.table th, .table td {
+    vertical-align: middle; /* Ensures all content is vertically centered */
+    text-align: center; /* Centers content horizontally */
+}

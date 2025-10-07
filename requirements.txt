@@ -1,0 +1,12 @@
+Flask==2.3.3
+Jinja2==3.1.2
+python-multipart==0.0.6
+psycopg2-binary==2.9.11
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+requests==2.31.0
+PyMuPDF
+pdfplumber
+pytesseract
+pdf2image
+pillow

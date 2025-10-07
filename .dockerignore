@@ -1,0 +1,53 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local development
+.env
+.env.local
+
+# Documentation build
+docs/_build/
+
+# Test coverage
+htmlcov/
+.coverage
+
+# Temporary files
+*.tmp
+tmp/
+
+# Uploads (will be mounted as volume)
+uploads/*
+!uploads/.gitkeep
+
+# Database files
+*.db
+*.sqlite

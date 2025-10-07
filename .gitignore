@@ -1,0 +1,102 @@
+# ==============================================================================
+# Nimbus .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ------------------------------------------------------------------------------
+# IDEs and Editors
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# Operating System
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------------------------
+# Project Specific
+# ------------------------------------------------------------------------------
+# Uploaded documents (keep folder structure)
+uploads/*
+!uploads/.gitkeep
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+db/chat.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Configuration (sensitive)
+.env
+.env.local
+.env.production
+.secret_key
+
+# Session files
+flask_session/
+
+# Cache
+.cache/
+*.cache
+
+# ------------------------------------------------------------------------------
+# Documentation (keep important ones)
+# ------------------------------------------------------------------------------
+# Keep main documentation
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+
+# Ignore temporary documentation
+*.md~
+.doctrees/
+
+# ------------------------------------------------------------------------------
+# Build artifacts
+# ------------------------------------------------------------------------------
+*.whl
+*.tar.gz
+*.zip
+
+# ------------------------------------------------------------------------------
+# Development/Debug files
+# ------------------------------------------------------------------------------
+show_config.py
+debug/
+test_data/

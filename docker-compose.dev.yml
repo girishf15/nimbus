@@ -1,0 +1,41 @@
+version: '3.8'
+
+# Development-focused Docker Compose
+# Only runs supporting services (DB + Ollama)
+# Run Nimbus locally with: python app.py
+
+services:
+  # PostgreSQL Database with pgvector
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nimbus
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  # Ollama for Local LLMs
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    # Uncomment if you have NVIDIA GPU
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  postgres_data:
+  ollama_data:

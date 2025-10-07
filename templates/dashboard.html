@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block title %}Nimbus Dashboard{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <!-- Welcome Card -->
+    <div class="col-md-12 mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="card-title">
+            <i class="bi bi-person-circle"></i> Welcome, {{ username }}!
+          </h4>
+          <p class="card-text">Welcome to Nimbus - Your AI-Powered Document Assistant with RAG (Retrieval-Augmented Generation)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Start Guide -->
+    <div class="col-lg-8 mb-4">
+      <div class="card shadow h-100">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-book"></i> Quick Start Guide
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="accordion" id="guideAccordion">
+            
+            <!-- Step 1: Upload Documents -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <strong>1. Upload Documents</strong>
+                  <span class="badge bg-primary ms-2">Start Here</span>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#guideAccordion">
+                <div class="accordion-body">
+                  <p><strong>Go to:</strong> Documents → Upload Files</p>
+                  <ul>
+                    <li>Supported formats: <code>PDF</code>, <code>DOCX</code>, <code>TXT</code></li>
+                    <li>Click "Choose File" and select your document</li>
+                    <li>Click "Upload" to add it to your library</li>
+                  </ul>
+                  <div class="alert alert-info mb-0">
+                    <i class="bi bi-info-circle"></i> <strong>Tip:</strong> You can upload multiple documents to build a knowledge base!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Parse Documents -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <strong>2. Parse Documents</strong>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#guideAccordion">
+                <div class="accordion-body">
+                  <p><strong>After uploading:</strong> Extract text from your documents</p>
+                  <ul>
+                    <li>Select a parser from the dropdown:
+                      <ul>
+                        <li><code>PyMuPDF</code> - Fast and versatile, good for most PDFs</li>
+                        <li><code>pdfplumber</code> - Best for text-heavy PDFs with tables</li>
+                        <li><code>Unstructured</code> - Advanced layout detection with OCR support</li>
+                        <li><code>OCR (Images)</code> - 🆕 For scanned PDFs and image-heavy documents</li>
+                      </ul>
+                    </li>
+                    <li>Click "Parse" to extract the text</li>
+                    <li>Wait for status to change to "Parsed"</li>
+                  </ul>
+                  <div class="alert alert-info mb-0">
+                    <i class="bi bi-eye-fill"></i> <strong>Preview:</strong> Click the eye icon to preview parsed content!
+                  </div>
+                  <div class="alert alert-success mb-0 mt-2">
+                    <i class="bi bi-image"></i> <strong>Image Support:</strong> Use OCR parser for scanned documents, screenshots, or image-based PDFs!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Split into Chunks -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <strong>3. Split into Chunks</strong>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#guideAccordion">
+                <div class="accordion-body">
+                  <p><strong>After parsing:</strong> Break documents into smaller chunks for AI processing</p>
+                  <ul>
+                    <li>Select a splitter strategy:
+                      <ul>
+                        <li><code>RecursiveCharacterTextSplitter</code> - General purpose, preserves structure</li>
+                        <li><code>SemanticChunker</code> - Smart splitting by meaning</li>
+                        <li><code>TokenTextSplitter</code> - Token-based chunking</li>
+                      </ul>
+                    </li>
+                    <li>Click "Split" to create chunks</li>
+                    <li>Each chunk will be used for AI retrieval</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Generate Embeddings -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <strong>4. Generate Embeddings</strong>
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#guideAccordion">
+                <div class="accordion-body">
+                  <p><strong>After splitting:</strong> Create vector embeddings for semantic search</p>
+                  <ul>
+                    <li>Select an embedding model:
+                      <ul>
+                        <li><code>nomic-embed-text</code> - High quality, balanced</li>
+                        <li><code>mxbai-embed-large</code> - Large context window</li>
+                        <li><code>all-minilm</code> - Fast and lightweight</li>
+                      </ul>
+                    </li>
+                    <li>Click "Embed" to generate vectors</li>
+                    <li>This enables semantic search across your documents</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Enable & Chat -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <strong>5. Enable Documents & Chat</strong>
+                  <span class="badge bg-success ms-2">Final Step</span>
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#guideAccordion">
+                <div class="accordion-body">
+                  <p><strong>Start chatting:</strong> Ask questions about your documents!</p>
+                  <ul>
+                    <li>Click "Enable" toggle to make documents active for RAG</li>
+                    <li>Go to the <strong>Chat</strong> page</li>
+                    <li>Select a chat model (e.g., <code>llama3.2</code>, <code>qwen2.5</code>)</li>
+                    <li>Ask questions - the AI will search your documents for answers!</li>
+                  </ul>
+                  <div class="alert alert-success mb-0">
+                    <i class="bi bi-chat-dots"></i> <strong>Pro Tip:</strong> The AI will cite which documents it used to answer your question!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features & Tips -->
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow mb-3">
+        <div class="card-header bg-info text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-lightbulb"></i> Key Features
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success"></i> 
+              <strong>Multi-Model RAG</strong><br>
+              <small class="text-muted">Use multiple embedding models simultaneously</small>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success"></i> 
+              <strong>Document Preview</strong><br>
+              <small class="text-muted">View PDFs and parsed text in-browser</small>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success"></i> 
+              <strong>Session Management</strong><br>
+              <small class="text-muted">Organize conversations by topic</small>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success"></i> 
+              <strong>Advanced Parsers</strong><br>
+              <small class="text-muted">Extract text from complex documents</small>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success"></i> 
+              <strong>Smart Chunking</strong><br>
+              <small class="text-muted">Semantic and recursive splitting</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow">
+        <div class="card-header bg-warning text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-exclamation-triangle"></i> Important Notes
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="small">
+            <li class="mb-2">Documents must be processed in order: <strong>Upload → Parse → Split → Embed → Enable</strong></li>
+            <li class="mb-2">Only <strong>enabled</strong> documents are used in chat RAG</li>
+            <li class="mb-2">Different parsers may extract text differently - experiment to find the best one!</li>
+            <li class="mb-2">You can delete and re-process documents at any time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}
