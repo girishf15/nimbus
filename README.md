@@ -189,7 +189,41 @@ http://localhost:8000
 
 ---
 
-## 📖 Usage Guide
+## � Screenshots
+
+### Login & Dashboard
+![Login Screen](docs/images/screenshots/login-screen.png)
+*Nimbus login screen with professional branding*
+
+![Dashboard Overview](docs/images/screenshots/dashboard-overview.png)
+*Main dashboard showing the Document Mind interface*
+
+### Document Management
+![Document Upload](docs/images/screenshots/document-upload.png)
+*Easy drag-and-drop document upload interface*
+
+![Document List](docs/images/screenshots/document-list.png)
+*View and manage your uploaded documents*
+
+### Document Processing
+![Parser Selection](docs/images/screenshots/parser-selection.png)
+*Choose the appropriate parser for your document type*
+
+![Embedding Generation](docs/images/screenshots/embedding-generation.png)
+*Generate embeddings with different models*
+
+![Processing Status](docs/images/screenshots/processing-status.png)
+*Monitor document processing progress*
+
+### Chat Interface
+![Chat Interface](docs/images/screenshots/chat-interface.png)
+*Natural language chat with your documents*
+
+> 📝 **Note**: For detailed usage instructions with step-by-step screenshots, see the [Usage Guide](docs/USAGE_GUIDE.md).
+
+---
+
+## �📖 Usage Guide
 
 ### 1. **Upload Documents**
 
