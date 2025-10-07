@@ -397,16 +397,33 @@ Please ensure your code follows the existing style and includes appropriate docu
 
 ---
 
-## 🛣️ Roadmap
+## 🛣️ Roadmap & Future Improvements
 
-- [ ] API endpoints for programmatic access
-- [ ] Support for more document types (Excel, CSV, HTML)
-- [ ] Vector index optimization (IVFFlat, HNSW)
-- [ ] Batch document processing
-- [ ] Multi-language support
-- [ ] Export chat conversations
-- [ ] Advanced analytics dashboard
-- [ ] Docker image for full application
+### 🔍 **Advanced Retrieval & Performance**
+- [ ] **Hybrid Retrieval + Re-ranker**: Combine dense and sparse retrieval with sophisticated re-ranking algorithms
+- [ ] **ANN Indexing for pgvector**: Implement HNSW/IVFFlat indexing for faster similarity search at scale
+- [ ] **Semantic Caching & Query Expansion**: Cache embeddings and expand queries for better retrieval coverage
+
+### 🔒 **Security & Infrastructure**  
+- [ ] **Security Hardening**: Move beyond default credentials with OAuth, RBAC, API keys, and audit logging
+- [ ] **Async Ingestion Pipeline**: Background processing with job queues for large document batches
+- [ ] **Advanced Analytics Dashboard**: Usage metrics, performance monitoring, and system insights
+
+### 📄 **Document Processing & Types**
+- [ ] **More File Types + Table Extraction**: Excel, CSV, HTML, PowerPoint with advanced table parsing
+- [ ] **Multi-language Support**: International document processing and multilingual embeddings
+- [ ] **Batch Document Processing**: Efficient handling of large document collections
+
+### 🌐 **API & Integration**
+- [ ] **API Endpoints**: RESTful API for programmatic access and third-party integrations  
+- [ ] **Export Chat Conversations**: Export functionality for conversations and knowledge artifacts
+- [ ] **Docker Image**: Complete containerized application for easy deployment
+
+### 📊 **Enterprise Features**
+- [ ] **Advanced User Management**: Organizations, teams, and granular permissions
+- [ ] **Document Versioning**: Track changes and maintain document history
+- [ ] **Audit Trails**: Complete logging for compliance and monitoring
+- [ ] **Custom Model Integration**: Support for private/custom LLM and embedding models
 
 ---
 
